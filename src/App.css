@@ -1,0 +1,111 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Anta&family=Audiowide&family=Fira+Code:wght@300..700&family=Lexend:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&family=Playwrite+NO:wght@100..400&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  transition: 0.5s all;
+}
+
+button * {
+    cursor: pointer;
+}
+
+NavLink * {
+    cursor: pointer;
+}
+
+.linkNav {
+  color: #404944;
+  position: relative;
+  width: max-content;
+  font-size: 14px;
+}
+
+.linkNav::after {
+  content: "";
+  width: 0;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  z-index: 100;
+  background: #072f22;
+  position: absolute;
+  border-radius: 50px;
+  transition: 0.5s all;
+}
+
+.linkNav.aktif::after {
+  content: "";
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  z-index: 100;
+  background: #072f22;
+  position: absolute;
+  border-radius: 50px;
+  transition: 0.5s all;
+}
+.linkNav.aktif {
+  transition: 0.5s all;
+  font-weight: 500;
+  color: #072f22;
+}
+
+.linkNav:hover::after {
+  width: 100%;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.footer:hover .petaIndo {
+  transform: scale(1.02);
+}
+
+.glass-card {
+  isolation: isolate;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.48),
+    rgba(255, 255, 255, 0.08)
+  );
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.glass-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.9);
+  filter: blur(0.5px);
+  opacity: 0.8;
+}
+
+@media (max-width: 1024px) {
+  .glass-card:hover {
+    transform: translateY(-12px) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .glass-card {
+    width: 250px;
+    height: 312px;
+  }
+}
